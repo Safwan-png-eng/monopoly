@@ -61,12 +61,24 @@ function App() {
     </>;
   }
   return (
-    <div className="main-game">
+    <div className="app-root">
       <button style={{position:'absolute',top:10,right:10}} onClick={reset}>Reset</button>
-      <PlayerPanel players={gameState.players} turn={gameState.turn} />
-      <Board board={gameState.board} players={gameState.players} />
-      <Dice dice={gameState.log?.slice(-1)[0]} canRoll={gameState.players[gameState.turn].id === player.id} socket={socket} room={room} />
-      <GameLog log={gameState.log || []} />
+      <div className="main-game">
+        <PlayerPanel players={gameState.players} turn={gameState.turn} />
+        <div className="board-area">
+          <Board board={gameState.board} players={gameState.players} />
+          <div className="game-controls">
+            <div className="current-player-panel">
+              Current Player: {gameState.players[gameState.turn]?.name}
+            </div>
+            <Dice dice={gameState.log?.slice(-1)[0]} canRoll={gameState.players[gameState.turn].id === player.id} socket={socket} room={room} />
+            {/* Add more controls here if needed */}
+          </div>
+        </div>
+        <div style={{display:'flex',flexDirection:'column',gap:'1.5rem',minWidth:320}}>
+          <GameLog log={gameState.log || []} />
+        </div>
+      </div>
     </div>
   );
 }
