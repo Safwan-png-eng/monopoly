@@ -160,4 +160,140 @@ body {
 }
 #join-game-btn:hover {
     background: #5E548E;
+}
+
+.lobby-container {
+    background: #231942;
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 24px #0006;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 500px;
+    text-align: center;
+}
+#lobby-players {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+.lobby-player {
+    background: #393053;
+    border-radius: 10px;
+    padding: 0.7rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1.1rem;
+    box-shadow: 0 1px 4px #0002;
+}
+.lobby-player-avatar {
+    font-size: 2rem;
+    border-radius: 50%;
+    background: #fff2;
+    width: 2.2em;
+    height: 2.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#start-game-btn {
+    background: #9F86C0;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.2s;
+}
+#start-game-btn:hover {
+    background: #5E548E;
+}
+#lobby-waiting {
+    margin-top: 1rem;
+    color: #FFD166;
+    font-size: 1.1rem;
+}
+
+.player-panel {
+    background: #2D3250;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 4px #0002;
+    width: 220px;
+    float: left;
+}
+#player-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 1rem;
+}
+.player-list-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: #393053;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    box-shadow: 0 1px 2px #0001;
+}
+.player-list-avatar {
+    font-size: 1.5rem;
+    border-radius: 50%;
+    background: #fff2;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#board-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 480px;
+    height: 480px;
+    background: #231942;
+    border-radius: 16px;
+    box-shadow: 0 0 16px #0004;
+    margin: 0 auto;
+    position: relative;
+}
+.board-tile {
+    background: #393053;
+    border: 1px solid #2D3250;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #fff;
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+.board-tile .tile-players {
+    display: flex;
+    gap: 0.2rem;
+    margin-top: 0.2rem;
+}
+.board-tile .tile-player-avatar {
+    font-size: 1.1rem;
+    border-radius: 50%;
+    background: #fff2;
+    width: 1.3em;
+    height: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 } 

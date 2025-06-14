@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="avatar-modal">
+    <div id="room-modal">
         <div class="avatar-modal-content">
-            <h2>Select your player appearance:</h2>
+            <h2>Join or Create a Room</h2>
+            <input id="room-code" placeholder="Room code (or leave blank to create)" maxlength="8" />
+            <input id="player-name" placeholder="Your name" maxlength="16" />
             <div class="avatar-grid">
                 <div class="avatar" style="background:#C9F658;">🟡</div>
                 <div class="avatar" style="background:#FFD166;">🟠</div>
@@ -24,12 +26,22 @@
                 <div class="avatar" style="background:#F7B801;">🟡</div>
                 <div class="avatar" style="background:#A3F7BF;">🟢</div>
             </div>
-            <button id="join-game-btn">Join game</button>
+            <button id="join-room-btn">Join Room</button>
         </div>
     </div>
-    <div class="game-container">
+    <div class="lobby-container" style="display:none;">
+        <h2>Lobby - Room <span id="lobby-room-id"></span></h2>
+        <div id="lobby-players"></div>
+        <button id="start-game-btn" style="display:none;">Start Game</button>
+        <div id="lobby-waiting" style="display:none;">Waiting for host to start...</div>
+    </div>
+    <div class="game-container" style="display:none;">
+        <div class="player-panel">
+            <h3>Players</h3>
+            <div id="player-list"></div>
+        </div>
         <div class="game-board">
-            <!-- Game board will be rendered here -->
+            <div id="board-grid"></div>
         </div>
         <div class="game-controls">
             <div class="player-info">
@@ -47,6 +59,8 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
     <script src="game.js"></script>
 </body>
+</html> 
 </html> 
