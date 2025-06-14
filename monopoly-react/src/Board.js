@@ -1,8 +1,24 @@
 import React from 'react';
 import { useSprings, animated } from '@react-spring/web';
+import { UserCircle, Smiley, Star, DiceSix, House, Crown, Rocket, Heart, Lightning, Ghost, Cat, Dog } from 'phosphor-react';
 
 const BOARD_SIZE = 8;
 const TILE_SIZE = 60; // px
+
+const icons = [
+  <UserCircle size={22} weight="fill" color="#FFD166" />,
+  <Smiley size={22} weight="fill" color="#4CAF50" />,
+  <Star size={22} weight="fill" color="#845EC2" />,
+  <DiceSix size={22} weight="fill" color="#FF6B6B" />,
+  <House size={22} weight="fill" color="#00C9A7" />,
+  <Crown size={22} weight="fill" color="#FFD700" />,
+  <Rocket size={22} weight="fill" color="#4D96FF" />,
+  <Heart size={22} weight="fill" color="#F67280" />,
+  <Lightning size={22} weight="fill" color="#B983FF" />,
+  <Ghost size={22} weight="fill" color="#A3F7BF" />,
+  <Cat size={22} weight="fill" color="#F9C80E" />,
+  <Dog size={22} weight="fill" color="#6BCB77" />
+];
 
 export default function Board({ board, players }) {
   // Calculate positions for each tile (row, col)
@@ -52,7 +68,7 @@ export default function Board({ board, players }) {
             pointerEvents: 'none',
           }}
         >
-          {playerTokens[i].avatar}
+          {icons[playerTokens[i].avatar]}
         </animated.span>
       ))}
     </div>

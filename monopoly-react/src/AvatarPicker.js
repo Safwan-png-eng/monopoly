@@ -1,14 +1,28 @@
 import React from 'react';
 import { useSprings, animated } from '@react-spring/web';
+import { UserCircle, Smiley, Star, DiceSix, House, Crown, Rocket, Heart, Lightning, Ghost, Cat, Dog } from 'phosphor-react';
 
-const avatars = ['🟡','🟠','🔴','🟢','🔵','🟣','🟤','🟣','🟢','🟣','🟡','🟢'];
+const icons = [
+  <UserCircle size={32} weight="fill" color="#FFD166" />,
+  <Smiley size={32} weight="fill" color="#4CAF50" />,
+  <Star size={32} weight="fill" color="#845EC2" />,
+  <DiceSix size={32} weight="fill" color="#FF6B6B" />,
+  <House size={32} weight="fill" color="#00C9A7" />,
+  <Crown size={32} weight="fill" color="#FFD700" />,
+  <Rocket size={32} weight="fill" color="#4D96FF" />,
+  <Heart size={32} weight="fill" color="#F67280" />,
+  <Lightning size={32} weight="fill" color="#B983FF" />,
+  <Ghost size={32} weight="fill" color="#A3F7BF" />,
+  <Cat size={32} weight="fill" color="#F9C80E" />,
+  <Dog size={32} weight="fill" color="#6BCB77" />
+];
 
 export default function AvatarPicker({ avatar, setAvatar }) {
   const springs = useSprings(
-    avatars.length,
-    avatars.map((a, i) => ({
-      scale: avatar === a ? 1.2 : 1,
-      boxShadow: avatar === a ? '0 0 12px #FFD166' : 'none',
+    icons.length,
+    icons.map((_, i) => ({
+      scale: avatar === i ? 1.2 : 1,
+      boxShadow: avatar === i ? '0 0 12px #FFD166' : 'none',
       config: { tension: 300, friction: 20 }
     }))
   );
@@ -16,7 +30,7 @@ export default function AvatarPicker({ avatar, setAvatar }) {
     <div className="avatar-grid">
       {springs.map((style, i) => (
         <animated.div
-          key={avatars[i]}
+          key={i}
           style={{
             ...style,
             display: 'inline-block',
@@ -29,11 +43,13 @@ export default function AvatarPicker({ avatar, setAvatar }) {
             textAlign: 'center',
             lineHeight: '48px',
             fontSize: 32,
-            border: avatar === avatars[i] ? '3px solid #FFD166' : '3px solid transparent'
+            border: avatar === i ? '3px solid #FFD166' : '3px solid transparent',
+            boxShadow: avatar === i ? '0 0 12px #FFD166' : 'none',
+            transition: 'box-shadow 0.2s',
           }}
-          onClick={() => setAvatar(avatars[i])}
+          onClick={() => setAvatar(i)}
         >
-          {avatars[i]}
+          {icons[i]}
         </animated.div>
       ))}
     </div>
