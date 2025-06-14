@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/monopoly/static/css/main.38319929.css",
-    "main.js": "/monopoly/static/js/main.3674ddc0.js",
+    "main.js": "/monopoly/static/js/main.d5b5ae6a.js",
     "static/js/453.3a07fa1e.chunk.js": "/monopoly/static/js/453.3a07fa1e.chunk.js",
     "index.html": "/monopoly/index.html",
     "main.38319929.css.map": "/monopoly/static/css/main.38319929.css.map",
-    "main.3674ddc0.js.map": "/monopoly/static/js/main.3674ddc0.js.map",
+    "main.d5b5ae6a.js.map": "/monopoly/static/js/main.d5b5ae6a.js.map",
     "453.3a07fa1e.chunk.js.map": "/monopoly/static/js/453.3a07fa1e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.38319929.css",
-    "static/js/main.3674ddc0.js"
+    "static/js/main.d5b5ae6a.js"
   ]
 }
