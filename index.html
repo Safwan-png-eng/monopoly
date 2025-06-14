@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monopoly Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="avatar-modal">
+        <div class="avatar-modal-content">
+            <h2>Select your player appearance:</h2>
+            <div class="avatar-grid">
+                <div class="avatar" style="background:#C9F658;">🟡</div>
+                <div class="avatar" style="background:#FFD166;">🟠</div>
+                <div class="avatar" style="background:#FF6B6B;">🔴</div>
+                <div class="avatar" style="background:#6BCB77;">🟢</div>
+                <div class="avatar" style="background:#4D96FF;">🔵</div>
+                <div class="avatar" style="background:#845EC2;">🟣</div>
+                <div class="avatar" style="background:#F9C80E;">🟤</div>
+                <div class="avatar" style="background:#F67280;">🟣</div>
+                <div class="avatar" style="background:#00C9A7;">🟢</div>
+                <div class="avatar" style="background:#B983FF;">🟣</div>
+                <div class="avatar" style="background:#F7B801;">🟡</div>
+                <div class="avatar" style="background:#A3F7BF;">🟢</div>
+            </div>
+            <button id="join-game-btn">Join game</button>
+        </div>
+    </div>
+    <div class="game-container">
+        <div class="game-board">
+            <!-- Game board will be rendered here -->
+        </div>
+        <div class="game-controls">
+            <div class="player-info">
+                <h2>Current Player: <span id="current-player">Player 1</span></h2>
+                <p>Money: $<span id="player-money">1500</span></p>
+            </div>
+            <div class="dice-container">
+                <div class="dice" id="dice1">1</div>
+                <div class="dice" id="dice2">1</div>
+            </div>
+            <button id="roll-dice">Roll Dice</button>
+            <div class="game-log">
+                <h3>Game Log</h3>
+                <div id="log-entries"></div>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html> 

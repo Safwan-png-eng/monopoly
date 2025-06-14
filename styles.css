@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #18122B;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    background: #231942;
+    border-radius: 18px;
+    box-shadow: 0 0 32px 0 #0008;
+}
+
+.game-board {
+    width: 600px;
+    height: 600px;
+    background: #2D3250;
+    border: 2px solid #9F86C0;
+    border-radius: 16px;
+    position: relative;
+}
+
+.game-controls {
+    width: 320px;
+    padding: 1.5rem;
+    background: #2D3250;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px #0004;
+}
+
+.player-info {
+    margin-bottom: 1.5rem;
+    background: #393053;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 1px 4px #0002;
+}
+
+.dice-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.dice {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    color: #231942;
+    border: 2px solid #9F86C0;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    box-shadow: 0 1px 6px #0002;
+}
+
+#roll-dice {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(90deg, #9F86C0 0%, #5E548E 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    transition: background 0.2s;
+}
+
+#roll-dice:hover {
+    background: linear-gradient(90deg, #5E548E 0%, #9F86C0 100%);
+}
+
+.game-log {
+    background: #393053;
+    padding: 1rem;
+    border-radius: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 1px 4px #0002;
+}
+
+#log-entries {
+    margin-top: 0.5rem;
+}
+
+.log-entry {
+    padding: 0.5rem;
+    border-bottom: 1px solid #2D3250;
+}
+
+/* Avatar Modal */
+#avatar-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(24, 18, 43, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.avatar-modal-content {
+    background: #231942;
+    padding: 2rem 2.5rem;
+    border-radius: 18px;
+    box-shadow: 0 0 32px #000a;
+    text-align: center;
+}
+.avatar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 48px);
+    gap: 1.2rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: border 0.2s, box-shadow 0.2s;
+    font-size: 2rem;
+}
+.avatar.selected {
+    border: 3px solid #9F86C0;
+    box-shadow: 0 0 8px #9F86C0;
+}
+#join-game-btn {
+    background: #9F86C0;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.2s;
+}
+#join-game-btn:hover {
+    background: #5E548E;
+} 
