@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSprings } from '@react-spring/web';
 import { UserCircle, Smiley, Star, DiceSix, House, Crown, Rocket, Heart, Lightning, Ghost, Cat, Dog, Train, Drop } from 'phosphor-react';
 
 const BOARD_SIZE = 11; // 11 tiles per side for a classic board
@@ -62,16 +61,6 @@ function getTilePosition(idx) {
 }
 
 export default function Board({ board, players }) {
-  // Prepare player tokens for animation
-  const playerTokens = players.map((p) => {
-    const pos = getTilePosition(p.position % BOARD_LENGTH);
-    return {
-      ...p,
-      left: pos.left,
-      top: pos.top,
-    };
-  });
-
   return (
     <div className="monopoly-board" style={{ position: 'relative', width: TILE_SIZE * (BOARD_SIZE - 1) + CORNER_SIZE, height: TILE_SIZE * (BOARD_SIZE - 1) + CORNER_SIZE, margin: '0 auto', border: '4px solid #393053', boxShadow: '0 0 32px #0008', background: '#18122B' }}>
       {board.slice(0, BOARD_LENGTH).map((tile, idx) => {
